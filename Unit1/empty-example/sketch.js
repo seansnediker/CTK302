@@ -1,36 +1,41 @@
+let snowflakes = []; // array to hold snowflake objects
+
 function setup() {
-  createCanvas(800, 500);
-  rectMode(CENTER);
-  ellipseMode(CENTER);
+  createCanvas(800, 600);
+  fill(240);
   noStroke();
 }
 
 function draw() {
-  background(100);
+  background("#4a1021");
+  let t = frameCount / 60; // update time
+
+  // create a random number of snowflakes each frame
+  for (let i = 0; i < random(5); i++) {
+    snowflakes.push(new snowflake()); // append snowflake object
+  }
+
+  // loop through snowflakes with a for..of loop
+  for (let flake of snowflakes) {
+    flake.update(t); // update snowflake position
+    flake.display(); // draw snowflake
+  }
 
   if (mouseIsPressed) {
-    fill("red");
-    ellipse(274, 154, 200, 200);
-       
-  } else {
-    // when the mouse isn't pressed!
-    
-    
-    
     fill("white");
     ellipse(387, 365, 150, 150);
     ellipse(387, 275, 130, 130);
     ellipse(387, 185, 100, 100);
-    
+
     fill("black");
     noStroke();
     ellipse(387, 365, 15, 15);
     ellipse(387, 275, 15, 15);
-    ellipse(367, 175, 10, 10);
+    ellipse(377, 175, 10, 10);
     ellipse(405, 175, 10, 10);
-    rect(387, 145, 70, 10);
-    rect(387,130, 50, 30);
-    
+    rect(353, 135, 70, 10);
+    rect(363, 110, 50, 30);
+
     stroke(16);
     line(252, 223, 323, 263);
     line(452, 263, 522, 230);
@@ -38,15 +43,50 @@ function draw() {
     line(522, 230, 536, 227);
     line(275, 235, 282, 224);
     line(260, 227, 242, 227);
-    
+
     fill("orange");
     triangle(408, 189, 385, 179, 385, 191);
-    
+
     fill("#484654");
     arc(385, 210, 30, 30, 0, PI + QUARTER_PI, CHORD);
-    
+
     fill("white");
     rect(0, 500, 1600, 130);
+  } else {
+    // when the mouse isn't pressed!
+
+    rect(width, height, 1, 2);
+
+    fill("white");
+    ellipse(387, 365, 150, 150);
+    ellipse(387, 275, 130, 130);
+    ellipse(387, 185, 100, 100);
+
+    fill("black");
+    noStroke();
+    ellipse(387, 365, 15, 15);
+    ellipse(387, 275, 15, 15);
+    ellipse(377, 175, 10, 10);
+    ellipse(405, 175, 10, 10);
+    rect(353, 135, 70, 10);
+    rect(363, 110, 50, 30);
+
+    stroke(16);
+    line(252, 223, 323, 263);
+    line(452, 263, 522, 230);
+    line(522, 230, 531, 215);
+    line(522, 230, 536, 227);
+    line(275, 235, 282, 224);
+    line(260, 227, 242, 227);
+
+    fill("orange");
+    triangle(408, 189, 385, 179, 385, 191);
+
+    fill("#484654");
+    arc(385, 210, 30, 30, 0, PI + QUARTER_PI, CHORD);
+
+    fill("white");
+    rect(0, 440, 1600, 730);
   }
 
   // this shows mouse location - comment it out when you're done!
@@ -58,4 +98,44 @@ function draw() {
 // record the mouse location in console when clicked
 function mouseReleased() {
   print(mouseX + ", " + mouseY);
+}
+
+// snowflake class
+function snowflake() {
+  // initialize coordinates
+  this.posX = 0;
+  this.posY = random(-50, 0);
+  this.initialangle = random(0, 2 * PI);
+  this.size = random(10, 15);
+  this.opacity = random(50, 100);
+
+  // radius of snowflake spiral
+  // chosen so the snowflakes are uniformly spread out in area
+  this.radius = sqrt(random(pow(width / 2, 2)));
+
+  this.update = function (time) {
+    // x position follows a circle
+    let w = 0.6; // angular speed
+    let angle = w * time + this.initialangle;
+    this.posX = width / 2 + this.radius * sin(angle);
+
+    // different size snowflakes fall at slightly different y speeds
+    this.posY += pow(this.size, 0.5);
+
+    // delete snowflake if past end of screen
+    if (this.posY > height) {
+      let index = snowflakes.indexOf(this);
+      snowflakes.splice(index, 1);
+    }
+  };
+
+  this.display = function () {
+    if (mouseIsPressed) {
+      fill(255, 0, 0, this.opacity);
+      ellipse(this.posX, this.posY, this.size+10);
+    } else {
+      fill("white");
+      ellipse(this.posX, this.posY, this.size+5);
+    }
+  };
 }
