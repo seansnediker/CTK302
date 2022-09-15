@@ -73,9 +73,15 @@ function draw() {
     stroke(16);
     line(374, 175, 393, 180)
     line(360, 125, 375, 136)
+<<<<<<< HEAD:Unit1/mp1/sketch.js
     line(405, 135, 418, 123)
    
     fill("#d3dff5");
+=======
+    line(405, 135, 418, 136)
+   
+    fill("white");
+>>>>>>> 26b84646a53378c9bc194bce85999363698031af:Unit1/empty-example/sketch.js
     rect(0, 440, 1600, 730);
     
     stroke(16);
