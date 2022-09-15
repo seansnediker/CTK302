@@ -23,6 +23,16 @@ function draw() {
 
   if (mouseIsPressed) {
     
+    fill("#ECF48A");
+    ellipse(701, 73, 100, 100);
+    
+    fill("#E8DA06");
+    ellipse(725, 47, 10, 8);
+    ellipse(670, 70, 8, 12);
+    ellipse(713, 99, 15, 20);
+    ellipse(683, 100, 8, 7);
+    ellipse(700, 65, 8, 7);
+    
     fill("brown");
     rect(82, 200, 50, 240);
     
@@ -38,18 +48,18 @@ function draw() {
     ellipse(99, 99, 10, 15);
     
     fill("white");
-    ellipse(387, 365, 150, 150);
-    ellipse(387, 275, 130, 130);
-    ellipse(387, 185, 100, 100);
+    ellipse(387, 335, 150, 150);
+    ellipse(387, 245, 130, 130);
+    ellipse(387, 155, 100, 100);
 
     fill("black");
     noStroke();
-    ellipse(387, 365, 15, 15);
-    ellipse(387, 275, 15, 15);
-    ellipse(377, 175, 10, 10);
-    ellipse(405, 175, 10, 10);
-    rect(353, 135, 70, 10);
-    rect(363, 110, 50, 30);
+    ellipse(387, 335, 15, 15);
+    ellipse(387, 245, 15, 15);
+    ellipse(377, 145, 10, 10);
+    ellipse(405, 145, 10, 10);
+    rect(353, 105, 70, 10);
+    rect(363, 80, 50, 30);
 
     stroke(16);
     line(252, 223, 323, 263);
@@ -60,10 +70,10 @@ function draw() {
     line(260, 227, 242, 227);
 
     fill("orange");
-    triangle(408, 189, 385, 179, 385, 191);
+    triangle(408, 159, 385, 149, 385, 161);
 
     fill("#484654");
-    arc(385, 210, 30, 30, 0, PI + QUARTER_PI, CHORD);
+    arc(385, 180, 30, 30, 0, PI + QUARTER_PI, CHORD);
 
     fill("white");
     rect(0, 440, 1600, 730);
@@ -80,8 +90,6 @@ function draw() {
     ellipse(683, 100, 8, 7);
     ellipse(700, 65, 8, 7);
     
-    
-    
     fill("brown");
     rect(82, 200, 50, 240);
     
@@ -95,8 +103,6 @@ function draw() {
     ellipse(121, 143, 10, 15);
     ellipse(135, 202, 10, 15);
     ellipse(99, 99, 10, 15);
-    
-
     
     rect(width, height, 1, 2);
 
