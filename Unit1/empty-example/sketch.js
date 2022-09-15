@@ -22,6 +22,21 @@ function draw() {
   }
 
   if (mouseIsPressed) {
+    
+    fill("brown");
+    rect(82, 200, 50, 240);
+    
+    fill("green");
+    triangle(30, 220, 103, 127, 185, 220);
+    triangle(50, 165, 160, 165, 103, 100);
+    triangle(66, 125, 140, 125, 103, 70);
+    
+    fill("brown");
+    ellipse(76, 193, 10, 15);
+    ellipse(121, 143, 10, 15);
+    ellipse(135, 202, 10, 15);
+    ellipse(99, 99, 10, 15);
+    
     fill("white");
     ellipse(387, 365, 150, 150);
     ellipse(387, 275, 130, 130);
@@ -51,10 +66,38 @@ function draw() {
     arc(385, 210, 30, 30, 0, PI + QUARTER_PI, CHORD);
 
     fill("white");
-    rect(0, 500, 1600, 130);
+    rect(0, 440, 1600, 730);
   } else {
     // when the mouse isn't pressed!
 
+    fill("#ECF48A");
+    ellipse(701, 73, 100, 100);
+    
+    fill("#E8DA06");
+    ellipse(725, 47, 10, 8);
+    ellipse(670, 70, 8, 12);
+    ellipse(713, 99, 15, 20);
+    ellipse(683, 100, 8, 7);
+    ellipse(700, 65, 8, 7);
+    
+    
+    
+    fill("brown");
+    rect(82, 200, 50, 240);
+    
+    fill("green");
+    triangle(30, 220, 103, 127, 185, 220);
+    triangle(50, 165, 160, 165, 103, 100);
+    triangle(66, 125, 140, 125, 103, 70);
+    
+    fill("brown");
+    ellipse(76, 193, 10, 15);
+    ellipse(121, 143, 10, 15);
+    ellipse(135, 202, 10, 15);
+    ellipse(99, 99, 10, 15);
+    
+
+    
     rect(width, height, 1, 2);
 
     fill("white");
@@ -132,9 +175,9 @@ function snowflake() {
   this.display = function () {
     if (mouseIsPressed) {
       fill(255, 0, 0, this.opacity);
-      ellipse(this.posX, this.posY, this.size+10);
+      ellipse(this.posX, this.posY, this.size+5);
     } else {
-      fill("white");
+      fill(255, 255, 255, this.opacity);
       ellipse(this.posX, this.posY, this.size+5);
     }
   };
