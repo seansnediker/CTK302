@@ -1,5 +1,3 @@
-
-
 let snowflakes = []; // array to hold snowflake objects
 
 function setup() {
@@ -24,25 +22,24 @@ function draw() {
   }
 
   if (mouseIsPressed) {
-    
-    fill(255,0 ,0);
+    fill(255, 0, 0);
     ellipse(701, 73, 100, 100);
-    
+
     fill(102, 0, 0);
     ellipse(725, 47, 10, 8);
     ellipse(670, 70, 8, 12);
     ellipse(713, 99, 15, 20);
     ellipse(683, 100, 8, 7);
     ellipse(700, 65, 8, 7);
-    
+
     fill("#151617");
-    rect(82, 200, 50, 240);    
-    
+    rect(82, 200, 50, 240);
+
     fill("orange");
     triangle(82, 200, 99, 200, 87, 179);
     triangle(99, 200, 114, 200, 106, 167);
     triangle(114, 200, 131, 200, 123, 163);
-    
+
     fill("white");
     ellipse(387, 335, 150, 150);
     ellipse(387, 245, 130, 130);
@@ -64,20 +61,19 @@ function draw() {
     line(522, 230, 536, 227);
     line(534, 180, 533, 167);
     line(534, 180, 543, 172);
-    
 
     fill("orange");
     triangle(408, 159, 385, 149, 385, 161);
 
     fill("#484654");
     stroke(16);
-    line(374, 175, 393, 180)
-    line(360, 125, 375, 136)
-    line(405, 135, 418, 123)
-   
+    line(374, 175, 393, 180);
+    line(360, 125, 375, 136);
+    line(405, 135, 418, 123);
+
     fill("#d3dff5");
     rect(0, 440, 1600, 730);
-    
+
     stroke(16);
     line(329, 383, 300, 450);
     line(450, 380, 475, 450);
@@ -86,28 +82,28 @@ function draw() {
 
     fill("#ECF48A");
     ellipse(701, 73, 100, 100);
-    
+
     fill("#E8DA06");
     ellipse(725, 47, 10, 8);
     ellipse(670, 70, 8, 12);
     ellipse(713, 99, 15, 20);
     ellipse(683, 100, 8, 7);
     ellipse(700, 65, 8, 7);
-    
+
     fill("brown");
     rect(82, 200, 50, 240);
-    
+
     fill("green");
     triangle(30, 220, 103, 127, 185, 220);
     triangle(50, 165, 160, 165, 103, 100);
     triangle(66, 125, 140, 125, 103, 70);
-    
+
     fill("brown");
     ellipse(76, 193, 10, 15);
     ellipse(121, 143, 10, 15);
     ellipse(135, 202, 10, 15);
     ellipse(99, 99, 10, 15);
-    
+
     rect(width, height, 1, 2);
 
     fill("white");
@@ -139,12 +135,12 @@ function draw() {
     arc(385, 210, 30, 30, 0, PI + QUARTER_PI, CHORD);
 
     fill("#d3dff5");
-    stroke(16)
+    stroke(16);
     rect(0, 440, 1600, 730);
   }
 
-    text()
-  
+  text();
+
   // this shows mouse location - comment it out when you're done!
 
   fill(0);
@@ -188,10 +184,10 @@ function snowflake() {
   this.display = function () {
     if (mouseIsPressed) {
       fill(255, 0, 0, this.opacity);
-      ellipse(this.posX, this.posY, this.size+5);
+      ellipse(this.posX, this.posY, this.size + 5);
     } else {
       fill(255, 255, 255, this.opacity);
-      ellipse(this.posX, this.posY, this.size+5);
+      ellipse(this.posX, this.posY, this.size + 5);
     }
   };
 }
