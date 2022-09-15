@@ -2,9 +2,6 @@
 
 let cbat;
 
-
-
-
 function preload() {
   cbat = loadSound("assets/cbat.mp3");
 }
@@ -16,4 +13,9 @@ function setup() {
 
 function draw() {
   background("black");
+}
+
+
+function touchStarter() {
+  getAudioContext().resume();
 }
