@@ -139,8 +139,6 @@ function draw() {
     rect(0, 440, 1600, 730);
   }
 
-  text();
-
   // this shows mouse location - comment it out when you're done!
 
   fill(0);
