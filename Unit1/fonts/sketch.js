@@ -4,7 +4,7 @@ function setup() {
   createCanvas(500, 500);
   f1 = loadFont("assets/BebasNeue-Regular.ttf") ;
   f2 = loadFont("assets/LEMONMILK-Regular.otf") ;
-  f3 = loadFont("assets/Avocado=Days.ttf") ;
+  f3 = loadFont("assets/Avocado-Days.ttf") ;
 textAlign(CENTER);
 
 }
