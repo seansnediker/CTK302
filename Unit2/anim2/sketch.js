@@ -6,13 +6,16 @@ function setup() {
 
 function draw() {
   
-  PushManager();
-  scale(0.01*x);
+  push();
+ translate(x, 0);
   avatar() ;
+
   x+=5;
   if (x > width) {
     x = -300;
   }
+  pop();
+
 }
 
 function avatar () {

@@ -54,6 +54,7 @@ function draw() {
       fill('grey');
       ellipse (width / 2, height / 2 + 170, 150, 150);
       velocity = 5;
+      
       break;
 
   }
