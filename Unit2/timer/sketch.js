@@ -10,7 +10,7 @@ function setup() {
   i3 = loadImage("imgs/bruh.png") ;
 imageMode(CENTER);
 
-f1 = loadFont("assets/BebasNeue-Regular.ttf") ;
+  f1 = loadFont("assets/BebasNeue-Regular.ttf") ;
   f2 = loadFont("assets/LEMONMILK-Regular.otf") ;
   f3 = loadFont("assets/Avocado-Days.ttf") ;
 textAlign(CENTER);
@@ -55,7 +55,7 @@ function draw() {
       image(i3, width/2, height/2, 400, 400) ;
       textFont(f3, 20)
       fill("white");
-text("This hangover is nothing compared to the sins crawling on my back. God forgive me", 200, 20, 0);
+      text("This hangover is nothing compared to the sins crawling on my back. God forgive me", 200, 20, 0);
         
         timer++;
       if (timer > 7*60) {
