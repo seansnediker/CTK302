@@ -1,5 +1,3 @@
-/// <reference path="../../libs/TSDef/p5.global-mode.d.ts" />
-
 let cbat;
 
 function preload() {
@@ -15,7 +13,15 @@ function draw() {
   background("black");
 }
 
+function mouseReleased() {
+  if (cbat.isPlaying()) {
+    cbat.pause();
+  } else {
+    cbat.play();
+  }
+}
 
-function touchStarter() {
+
+function touchStarted() {
   getAudioContext().resume();
 }
