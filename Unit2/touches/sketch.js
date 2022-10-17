@@ -19,22 +19,22 @@ function draw() {
   
   switch(numberOfTouches) {
     case 0: 
-      text("no one is touching the screen", 5, 22) ; 
+      text("touch me", 5, 22) ; 
       image(i1, width/2, height/2, window.innerWidth, window.innerHeight);
       break ;
       
       case 1: 
-       text("it's kind of lonely here", 5, 22) ; 
+       text("add more touch pls", 5, 22) ; 
        image(i2, width/2, height/2, window.innerWidth, window.innerHeight);      
        break ;
       
       case 2:
-      text("two fingers are touching the screen", 5, 22) ; 
+      text("MORE!!!!", 5, 22) ; 
       image(i3, width/2, height/2, window.innerWidth, window.innerHeight);      
       break ;
       
       case 3:
-     text("three are touching the screen", 5, 22) ; 
+     text("soap.", 5, 22) ; 
      image(i2, width/2, height/2, window.innerWidth, window.innerHeight);      
      break ;
   }
