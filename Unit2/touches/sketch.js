@@ -1,5 +1,5 @@
 let numberOfTouches ;
-let i1, i2, i3;
+let i1, i2, i3, i4 ;
 
 
 function setup() {
@@ -8,6 +8,7 @@ function setup() {
   i1 = loadImage("imgs/human.webp") ;
   i2 = loadImage("imgs/mayo.jpg") ;
   i3 = loadImage("imgs/feesh.jpg") ;
+  i4 = loadImage("imgs/2.webp")
   imageMode(CENTER);
 }
 
@@ -33,8 +34,8 @@ function draw() {
       break ;
       
       case 3:
-     text("HES ESCAPED AGAIN.", 5, 22) ; 
-     image(i2, width/2, height/2, window.innerWidth, window.innerHeight);      
+     text("soap.", 5, 22) ; 
+     image(i4, width/2, height/2, window.innerWidth, window.innerHeight);      
      break ;
   }
   
