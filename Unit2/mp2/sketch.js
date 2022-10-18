@@ -37,6 +37,9 @@ function draw() {
       background("blue");
       textFont(f1, 38);
       text("Click to see some goofy fellas", width/2, height/2);
+
+      s1.stop();
+
       break;
 
     case 0:
@@ -94,30 +97,27 @@ function draw() {
               
       break;
   } 
-}
+
 
 timer++;
-if(timer > 3*60 && state > -1)
-{
+if(timer > 3*60 && state > -1) {
   timer = 0;
   state++;
   if(state > 8)
   {
     state = -1;
+    }
   }
 }
 
 function mouseReleased() {
-  if(state < -1)
+  if(state == -1)
   {
     state++;
-    if(state > 8)
-    {
-      state = -1;
-    }
+    timer = 0;
+  }
 }
 
 function touchStarted() {
   getAudioContext().resume();
-}
 }
