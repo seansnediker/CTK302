@@ -40,15 +40,15 @@ function draw() {
       break;
 
     case 0:
-    image(i1, width/2, height/2, 400, 400) ;
-    if (!s1.isPlaying()) {
+      image(i1, width/2, height/2, 400, 400) ;
+      if (!s1.isPlaying()) {
       s1.play();
     }
   
     break ;
       
       case 1:
-      image(i2, width/2, height/2, 400, 400) ;
+        image(i2, width/2, height/2, 400, 400) ;
 
       break ;
       
@@ -108,12 +108,16 @@ if(timer > 3*60 && state > -1)
 }
 
 function mouseReleased() {
-  if(state <= -1)
+  if(state < -1)
   {
     state++;
-  }
+    if(state > 8)
+    {
+      state = -1;
+    }
 }
 
 function touchStarted() {
   getAudioContext().resume();
+}
 }
