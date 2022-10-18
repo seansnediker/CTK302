@@ -12,7 +12,7 @@ function preload() {
 function setup() {
   createCanvas(400, 400);
   i1 = loadImage("imgs/1st.jpg") ;
-  i2 = loadImage("imgs/2st.jpg") ;
+  i2 = loadImage("imgs/2nd.jpg") ;
   i3 = loadImage("imgs/3rd.jpg") ;
   i4 = loadImage("imgs/4th.jpg") ;
   i5 = loadImage("imgs/5th.jpg") ;
@@ -44,43 +44,67 @@ function draw() {
     if (!s1.isPlaying()) {
       s1.play();
     }
-      
-    timer++;
-      if (timer > 3*60) {
-        timer = 0;
-        state = 1 ;
-      }
+  
     break ;
       
       case 1:
       image(i2, width/2, height/2, 400, 400) ;
-
-      timer++;
-      if (timer > 5*60) {
-        timer = 0;
-        state = 2 ;
-      }
 
       break ;
       
       case 2:
       background("green");
       image(i3, width/2, height/2, 400, 400) ;
-      textFont(f3, 20)
-      fill("white");
-      text("This hangover is nothing compared to the sins crawling on my back. God forgive me", 200, 20, 0);
-        
-        timer++;
-      if (timer > 7*60) {
-        timer = 0;
-        state = 0 ;
 
       break;
+
+      case 3:
+      background("green");
+      image(i4, width/2, height/2, 400, 400) ;
+       
+      break;
+
+      case 4:
+      background("green");
+      image(i5, width/2, height/2, 400, 400) ;
+       
+      break;
+
+      case 5:
+      background("green");
+      image(i6, width/2, height/2, 400, 400) ;
+       
+      break;
+
+      case 6:
+      background("green");
+      image(i7, width/2, height/2, 400, 400) ;
+              
+      break;
       
+      case 7:
+      background("green");
+      image(i8, width/2, height/2, 400, 400) ;
       
+      break;
+
+      case 8:
+      background("green");
+      image(i9, width/2, height/2, 400, 400) ;
+              
+      break;
   } 
 }
 
+timer++;
+if(timer > 3*60 && state > -1)
+{
+  timer = 0;
+  state++;
+  if(state > 8)
+  {
+    state = -1;
+  }
 }
 
 function mouseReleased() {
