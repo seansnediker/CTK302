@@ -25,6 +25,10 @@ function draw() {
     cars.splice(i, 1)
   }
   }
+  fill("white");
+  textSize(20);
+  text(cars.length, width - 80, 40);
+
 }
 
 
@@ -54,7 +58,7 @@ class Car {
 
  move(){
   this.pos.add(this.vel) ;
-  this.a = this.a -1 ;
+  this.a = this.a - 3 ;
   // if (this.pos.x > width) this.pos.x = 0;
   // if (this.pos.x < 0) this.pos.y = width;
   // if (this.pos.y > height) this.pos.y = 0;
