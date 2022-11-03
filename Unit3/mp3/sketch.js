@@ -140,7 +140,7 @@ class Car {
   // constructor and attributes
   constructor() {
     this.pos = createVector(random(width), 100); // initialize your attributes here
-    this.velocity = createVector(0, random(3));
+    this.velocity = createVector(random(-3, 3), random(-3, 3));
     this.size = random(48, 128);
     this.type = int(random(types.length));
   }
