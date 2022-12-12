@@ -20,10 +20,12 @@ function draw() {
   background(255);
 
   // Draw the video capture as the background
-  image(cap, windowWidth, windowHeight, windowWidth, windowHeight);
+  image(cap, windowWidth/2, windowHeight/2, windowWidth, windowHeight);
 
-  // Set the fill color to white
-  fill(255);
+   // Generate random colors for each ellipse
+   var r = random (0, 255);
+   var g = random (100, 200);
+   var b = random (0, 100);
 
   cap.loadPixels();
 
@@ -34,7 +36,9 @@ function draw() {
       var ypos = (cy / cap.height) * height;
       
       // Draw the ellipse with the white fill color
-      ellipse(xpos, ypos, 5, 5 * (cap.pixels[offset+200]/255));
+      fill(r, g, b);
+      ellipse(xpos, ypos, 5,
+       5 * (cap.pixels[offset+200]/455));
     }
   }
     
