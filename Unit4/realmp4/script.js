@@ -22,7 +22,31 @@ let cubes;
 let nrOfCubesX;
 let nrOfCubesY;
 
+// weather stuff
+let weather;
+let weatherID = 0; // returned in the JSON weather element
+let state = 0;
+let x = 0;
+//let windspeed = 0;
+let temperature = 0;
+//let humidity = 0;
+
 function setup() {
+
+  //weather stuff
+
+  let myCityString =
+    "https://api.openweathermap.org/data/2.5/weather?q=Normal,IL,US&units=imperial&";
+
+  //let myIDString = "appid=2ab3fd961cc8c4aacb1786ddb79e8da5";
+    let myIDString = "appid=f1a2dfdc39b1d6fb5a02f2dda50c0ec7";
+
+  let myTotalString = myCityString + myIDString;
+
+  loadJSON(myTotalString, gotData); // that gotData function happens when JSON comes back.
+
+  // cube stuff
+
   setupColors();
   setupScene();
   setupRenderer();
@@ -40,6 +64,15 @@ function setup() {
     setupLights();
     draw();
   });
+}
+
+function gotData(data) {
+  weather = data;
+ //print(weather); // for debugging purposes, print out the JSON data when we get it.
+ // windspeed = weather.wind.speed;
+  temperature = weather.main.temp;
+ // humidity = weather.main.humidity;
+  
 }
 
 function setupCanvas() {
@@ -131,20 +164,34 @@ function setupCubes() {
 }
 
 function setupLights() {
-  let ambientLight = new THREE.AmbientLight(0x777777);
+  //let ambientLight = new THREE.AmbientLight(0x777777);
+  //let temp = 34 ;
+  let t = (temperature/10).toFixed(0) ;
+  ambientLights = [0x222288, 0x036ffc, 0x039dfc, 0x03d3fc, 0x03fcf8, 0x03fca5, 0x03fc7b, 0x03fc2c, 0xc6fc03, 0xf4fc03, 0xfc2c03] ;
+  spotLights = [0x222299, 0x0377fc, 0x2fb1f7, 0x60bef7, 0x6af7f5, 0x77f7ca, 0x7efcbb, 0x67f57e, 0xdbf774, 0xfbff8a, 0xfa6a4d] ;
+  let ambientLight = new THREE.AmbientLight(ambientLights[t]);
+  let spotLight = new THREE.SpotLight(spotLights[t]);
   scene.add(ambientLight);
-
-  let spotLight = new THREE.SpotLight(0xbbbbbb);
   spotLight.position.set(0, nrOfCubesY, 100);
   spotLight.castShadow = true;
   scene.add(spotLight);
 }
 
 function draw() {
+  switch (state) {
+    case 0:
+      if (weather) {
+        state = 1;
+      }
+      break;
+
+    case 1:
   requestAnimationFrame(draw);
   ctx.drawImage(video, 0, 0, w, h);
   pixelate();
   renderer.render(scene, camera);
+  break; }
+
 }
 
 function pixelate() {
@@ -157,6 +204,7 @@ function pixelate() {
     let col = getAverage(pixels, w - x * size, h - y * size);
     let c = Math.round(col);
     cube.material.color = colors.get(c);
+    //console.log(colors.get(c));
     let z = col / 10 + 0.01;
     cube.scale.z = z;
     cube.position.z = z / 2;

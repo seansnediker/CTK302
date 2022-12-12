@@ -38,7 +38,7 @@ function draw() {
       // Draw the ellipse with the white fill color
       fill(r, g, b);
       ellipse(xpos, ypos, 5,
-       5 * (cap.pixels[offset+200]/455));
+       5 * (cap.pixels[offset+200]/255));
     }
   }
     
