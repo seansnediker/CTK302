@@ -2,7 +2,7 @@
 Make sure you turn on orientation lock on your iPhone or Android device. */
 
 let alpha = 0, beta = 0 , gamma = 0; // gyroscope variablers
-let bunnyImage;
+let eggs;
 let xPosition = 0;
 let yPosition = 0;
 let x = 0, y = 0, z = 0 ; // accelerometer data
@@ -14,7 +14,7 @@ function setup() {
 
 
 
-  bunnyImage = loadImage("assets/bunny.jpg");
+  eggs = loadImage("assets/eggs.webp");
   imageMode(CENTER);
   rectMode(CENTER);
 
@@ -36,7 +36,7 @@ function draw() {
 
   rotate(radians(alpha)); // rotate the bunny depending on the alpha intake
 
-  image(bunnyImage, 0, 0, 500, 500);
+  image(eggs, 0, 0, 500, 500);
   // rect(0, 0, 100, 100) ;
   pop();
 
