@@ -6,7 +6,7 @@ function preload() {
 
 function setup() {
   createCanvas(500, 500);
-  cbat.play();
+  s1 = loadSound("assets/cbat.mp3");
 }
 
 function draw() {
